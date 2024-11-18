@@ -1,0 +1,111 @@
+{
+  "type": "world",
+  "identifier": "world1",
+  "name": "world.world1.name",
+  "resources": {
+    "texture": "/resources/textures/gui/world/halloween.png",
+    "background": "/resources/textures/gui/world/halloween_bg.png"
+  },
+  "buttons": [
+    {
+      "notes": "11",
+      "x": 596,
+      "y": 9,
+      "world_level": null,
+      "condition": null,
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "10",
+      "x": 484,
+      "y": 66,
+      "world_level": null,
+      "condition": null,
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "9",
+      "x": 372,
+      "y": 9,
+      "world_level": null,
+      "condition": null,
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "8",
+      "x": 260,
+      "y": -47,
+      "world_level": null,
+      "condition": null,
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "7",
+      "x": 148,
+      "y": 9,
+      "world_level": null,
+      "condition": null,
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "6",
+      "x": 35,
+      "y": 64,
+      "world_level": null,
+      "condition": null,
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "5",
+      "x": -75,
+      "y": 121,
+      "world_level": "level1_5",
+      "condition": "level1_4",
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "4",
+      "x": -186,
+      "y": 181,
+      "world_level": "level1_4",
+      "condition": "level1_3",
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "3",
+      "x": -301,
+      "y": 121,
+      "world_level": "level1_3",
+      "condition": "level1_2",
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "2",
+      "x": -415,
+      "y": 66,
+      "world_level": "level1_2",
+      "condition": "level1_1",
+      "boss": false,
+      "mini_game": false
+    },
+    {
+      "notes": "1",
+      "x": -526,
+      "y": 9,
+      "world_level": "level1_1",
+      "condition": "NOT_CONDITION",
+      "boss": false,
+      "mini_game": false
+    }
+  ],
+  "music": "halloween_map"
+}

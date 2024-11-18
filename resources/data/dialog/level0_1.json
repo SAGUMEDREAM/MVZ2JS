@@ -1,0 +1,44 @@
+{
+  "type": "DIALOG",
+  "identifier": "level0_1",
+  "dialogs": [
+    {
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "嘿，邻居，好久不见啊！",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "上次见到你，已经是好久以前了啊！",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "现在掌握器械的经验怎么样了？",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "记性不错嘛！朋友！",
+      "sound": ["sc1","sc2"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "啊！正说着呢，这些僵尸就又开始攻击你了。",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "那么，朋友，用你的经验把他们干掉吧！",
+      "sound": ["l1","l2","l3"]
+    }
+  ],
+  "objects": {}
+}

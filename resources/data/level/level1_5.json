@@ -1,0 +1,212 @@
+{
+  "name": "万圣夜 - 第5天",
+  "identifier": "level1_5",
+  "author": "[OFFICIAL]",
+  "daytime": false,
+  "conveyor_belt": false,
+  "has_boss": false,
+  "wave_point": 0,
+  "degree_of_difficulty": 1.0,
+  "speed": 1.0,
+  "big_wave_flags": [9,23],
+  "drops": null,
+  "maximum_half": 0.40,
+  "minimum_half": 0.32,
+  "cards": {
+    "fixed": false,
+    "list": [
+      "dispenser",
+      "furnace",
+      "obsidian",
+      "mine_tnt"
+    ]
+  },
+  "zombies": {
+    "static": [
+      {
+        "wave": 0,
+        "pool": []
+      }
+    ],
+    "dynamic": [
+      {
+        "wave": 0,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 1,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 2,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 3,
+        "wave_point": 150,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 4,
+        "wave_point": 100,
+        "entities": [
+          "skeleton"
+        ]
+      },{
+        "wave": 5,
+        "wave_point": 150,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 6,
+        "wave_point": 200,
+        "entities": [
+          "zombie",
+          "ghost"
+        ]
+      },{
+        "wave": 7,
+        "wave_point": 200,
+        "entities": [
+          "zombie",
+          "ghost"
+        ]
+      },{
+        "wave": 8,
+        "wave_point": 300,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 9,
+        "wave_point": 700,
+        "entities": [
+          "zombie",
+          "cap_zombie",
+          "skeleton"
+        ]
+      },{
+        "wave": 10,
+        "wave_point": 750,
+        "entities": [
+          "zombie",
+          "cap_zombie",
+          "skeleton",
+          "ghost"
+        ]
+      },{
+        "wave": 11,
+        "wave_point": 200,
+        "entities": [
+          "ghost"
+        ]
+      },{
+        "wave": 12,
+        "wave_point": 300,
+        "entities": [
+          "skeleton",
+          "ghost"
+        ]
+      },{
+        "wave": 13,
+        "wave_point": 400,
+        "entities": [
+          "zombie",
+          "skeleton"
+        ]
+      },{
+        "wave": 14,
+        "wave_point": 450,
+        "entities": [
+          "zombie",
+          "cap_zombie"
+        ]
+      },{
+        "wave": 15,
+        "wave_point": 100,
+        "entities": [
+          "ghost"
+        ]
+      },{
+        "wave": 16,
+        "wave_point": 400,
+        "entities": [
+          "iron_helmet_zombie"
+        ]
+      },{
+        "wave": 17,
+        "wave_point": 350,
+        "entities": [
+          "zombie",
+          "cap_zombie",
+          "skeleton"
+        ]
+      },{
+        "wave": 18,
+        "wave_point": 500,
+        "entities": [
+          "zombie",
+          "iron_helmet_zombie"
+        ]
+      },{
+        "wave": 19,
+        "wave_point": 450,
+        "entities": [
+          "zombie",
+          "cap_zombie",
+          "ghost"
+        ]
+      },{
+        "wave": 20,
+        "wave_point": 400,
+        "entities": [
+          "skeleton",
+          "zombie"
+        ]
+      },{
+        "wave": 21,
+        "wave_point": 350,
+        "entities": [
+          "skeleton",
+          "cap_zombie"
+        ]
+      },{
+        "wave": 22,
+        "wave_point": 500,
+        "entities": [
+          "zombie",
+          "skeleton",
+          "ghost"
+        ]
+      },{
+        "wave": 23,
+        "wave_point": 700,
+        "entities": [
+          "zombie",
+          "skeleton",
+          "iron_helmet_zombie",
+          "ghost"
+        ]
+      },
+      {
+        "wave": 24,
+        "wave_point": 0,
+        "entities": []
+      }
+    ]
+  },
+  "events": {
+    "start": "/src/event/level/RandomGStatue.js -> RandomGStatue",
+    "end": null
+  },
+  "scripts": [],
+  "boss": null
+}

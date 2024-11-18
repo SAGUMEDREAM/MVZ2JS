@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DialogMaker</title>
+    <link rel="stylesheet" href="/tools/resources/css/style.css">
+    <script src="/tools/src/JsonCodecsBuilder.js"></script>
+</head>
+<body>
+<div class="container" style="display: block">
+    <div class="ctx">
+        <center><big><big><big>对话编辑器</big></big></big></center>
+        <center><big><big>DialogRegistry</big></big></center>
+        <center><big>基础信息</big></center>
+        <p class="input-wrapper"><big>资源标识符:</big> <input class="input-text identifier" type="text"></p>
+        <center><big>对话信息</big></center>
+        <div class="input-container">
+            <div class="dialogs"></div>
+            <center>
+                <button onclick="addDialog()">添加</button>
+                <button onclick="removeDialog()">删除</button>
+            </center>
+        </div>
+        <div class="output">
+            <div class="DIALOG_JSON"></div>
+            <textarea class="outputBox"></textarea>
+            <div class="REGISTRY_JSON"></div>
+            <textarea class="outputBox2"></textarea>
+        </div>
+        <center>
+            <button onclick="generate()">点击生成</button>
+        </center>
+    </div>
+</div>
+<script>
+    var waveCounter = 0;
+    var codecs = new JsonCodecsBuilder();
+    codecs.setOutput([document.querySelector('.outputBox'),document.querySelector('.outputBox2')]);
+    function generate() {
+        codecs.generateDialogData();
+    }
+    function getString(num) {
+        return `<div class="dialog"><big>第${num + 1}轮</big><br>
+                    <p class="input-wrapper">名字: <input class="input-text name" type="text"></p>
+                    <p class="input-wrapper">文字: <input class="input-text text" type="text"></p>
+                    <p class="input-wrapper">材质: <input class="input-text texture" type="text"></p>
+                    <p class="input-wrapper">声音: <input class="input-text sound" type="text"></p>
+                    <p class="input-wrapper"><form action="/submit-path">
+                        <label for="toward">方向：</label>
+                        <select id="toward" name="toward">
+                            <option value="left">left</option>
+                            <option value="right">right</option>
+                        </select>
+                    </form>
+                    </p>
+                </div>`;
+    }
+    function addDialog() {
+        const container = document.querySelector('.dialogs');
+        container.insertAdjacentHTML('beforeend', getString(waveCounter));
+        waveCounter++;
+    }
+    function removeDialog() {
+        const container = document.querySelector('.dialogs');
+        const elements = container.querySelectorAll('.dialog');
+        if (elements.length > 0) {
+            elements[elements.length - 1].remove();
+            waveCounter--;
+        }
+    }
+</script>
+</body>
+</html>

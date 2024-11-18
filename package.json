@@ -1,0 +1,24 @@
+{
+  "name": "mvz2je_redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/index.html",
+  "type": "module",
+  "chromium-args":"--disable-devtools --autoplay-policy=no-user-gesture-required",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js"
+  },
+  "window": {
+    "toolbar": false,
+    "show": true,
+    "width": 1280,
+    "height": 720
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.14.3",
+    "nw-builder": "^4.4.2-beta.4"
+  }
+}

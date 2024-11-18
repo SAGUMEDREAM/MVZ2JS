@@ -1,0 +1,45 @@
+{
+  "registry_key": "SCENE",
+  "registries": [
+    {
+      "key": "title",
+      "value": "/src/gui/scene/Title.js -> Title"
+    },
+    {
+      "key": "menu_state0",
+      "value": "/src/gui/scene/MenuState0.js -> MenuState0"
+    },
+    {
+      "key": "menu_state1",
+      "value": "/src/gui/scene/MenuState1.js -> MenuState1"
+    },
+    {
+      "key": "menu_help",
+      "value": "/src/gui/scene/MenuHelp.js -> MenuHelp"
+    },
+    {
+      "key": "game_room",
+      "value": "/src/gui/scene/GameRoom.js -> GameRoom"
+    },
+    {
+      "key": "paper0",
+      "value": "/src/gui/scene/Paper0.js -> Paper0"
+    },
+    {
+      "key": "book_i",
+      "value": "/src/gui/scene/Book.js -> IBook"
+    },
+    {
+      "key": "book_m",
+      "value": "/src/gui/scene/Book.js -> MBook"
+    },
+    {
+      "key": "book_menu",
+      "value": "/src/gui/scene/Book.js -> BookMenu"
+    },
+    {
+      "key": "music_room",
+      "value": "/src/gui/scene/MusicRoom.js -> MusicRoom"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "万圣夜 - 第1天",
+  "identifier": "level1_1",
+  "author": "[OFFICIAL]",
+  "daytime": false,
+  "conveyor_belt": false,
+  "has_boss": false,
+  "wave_point": 0,
+  "degree_of_difficulty": 1.0,
+  "speed": 1.0,
+  "big_wave_flags": [11],
+  "drops": "small_dispenser",
+  "maximum_half": 0.40,
+  "minimum_half": 0.32,
+  "cards": {
+    "fixed": false,
+    "list": [
+      "dispenser",
+      "furnace",
+      "obsidian",
+      "mine_tnt"
+    ]
+  },
+  "zombies": {
+    "static": [
+      {
+        "wave": 0,
+        "pool": []
+      }
+    ],
+    "dynamic": [
+      {
+        "wave": 0,
+        "wave_point": 100,
+        "entities": []
+      },{
+        "wave": 1,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 2,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 3,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 4,
+        "wave_point": 150,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 5,
+        "wave_point": 100,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 6,
+        "wave_point": 100,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 7,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 8,
+        "wave_point": 250,
+        "entities": [
+          "zombie",
+          "cap_zombie"
+        ]
+      },{
+        "wave": 9,
+        "wave_point": 300,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 10,
+        "wave_point": 250,
+        "entities": [
+          "zombie","cap_zombie"
+        ]
+      },{
+        "wave": 11,
+        "wave_point": 850,
+        "entities": [
+          "zombie","cap_zombie"
+        ]
+      },{
+        "wave": 12,
+        "wave_point": 0,
+        "entities": [
+        ]
+      }
+    ]
+  },
+  "events": {
+    "start": null,
+    "end": null
+  },
+  "scripts": [],
+  "boss": null
+}

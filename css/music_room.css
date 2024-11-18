@@ -1,0 +1,127 @@
+.music_room {
+    display: flex;
+    width: 90%;
+    height: 75%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.music_room_left {
+    flex: 1;
+    margin-right: 40px;
+    border-right: 2px solid #ddd;
+    overflow-y: auto
+}
+
+.music_room_play_list {
+    list-style: none;
+    padding: 0;
+    overflow-y: auto
+}
+
+.music_room_play_list p {
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin: 2px 0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.music_room_play_list p:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.music_room_play_list p:active {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.music_room_play_list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.music_room_play_list li:hover {
+    background-color: #f0f0f0;
+}
+
+.music_room_right {
+    flex: 2;
+    padding-left: 20px;
+    background-color: #ffffff;
+    overflow: hidden
+}
+
+.music_title {
+    margin-top: 0;
+}
+
+.music_room_audio {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.audio_container {
+    display: flex;
+    align-items: center;
+}
+
+.play_button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 5px 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.play_button:hover {
+    background-color: #0056b3;
+}
+
+.progress_bar {
+    margin-top: 20px;
+    flex: 1;
+}
+
+.music_room_left::-webkit-scrollbar {
+    width: 12px; /* 宽度可以调整 */
+    height: 12px;
+}
+
+.music_room_left::-webkit-scrollbar-track {
+    background: #f0f0f0; /* 轨道背景色 */
+    border-radius: 10px;
+}
+
+.music_room_left::-webkit-scrollbar-thumb {
+    background-color: #888; /* 滑块颜色 */
+    border-radius: 10px;
+    border: 3px solid #f0f0f0; /* 内边距和轨道背景色一致 */
+}
+
+.music_room_left::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* 滑块悬停时颜色 */
+}
+
+.music_room_left {
+    scrollbar-width: thin; /* 滚动条宽度 (auto, thin, none) */
+    scrollbar-color: #888 #f0f0f0; /* thumb color and track color */
+}

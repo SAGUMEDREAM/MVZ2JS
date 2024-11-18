@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>LevelMaker</title>
+    <link rel="stylesheet" href="/tools/resources/css/style.css">
+    <script src="/tools/src/JsonCodecsBuilder.js"></script>
+</head>
+<body>
+<div class="container" style="display: block">
+    <div class="ctx">
+        <center><big><big><big>关卡编辑器</big></big></big></center>
+        <center><big><big>LevelRegistry</big></big></center>
+        <center><big>基础信息</big></center>
+        <div class="input-container">
+            <p class="input-wrapper"><big>关卡名:</big> <input class="input-text name" type="text"></p>
+            <p class="input-wrapper"><big>资源标识符:</big> <input class="input-text identifier" type="text"></p>
+            <p class="input-wrapper"><big>作者:</big> <input class="input-text author" type="text"></p>
+            <p class="input-wrapper"><big>白天?:</big> <input class="input-text choice daytime" type="checkbox"></p>
+            <p class="input-wrapper"><big>传送带?:</big> <input class="input-text choice conveyor_belt" type="checkbox"></p>
+            <p class="input-wrapper"><big>BOSS战?:</big> <input class="input-text choice isBossLevel" type="checkbox"></p>
+            <p class="input-wrapper"><big>初始化波次点数:</big> <input class="input-text wave_point" type="text"></p>
+            <p class="input-wrapper"><big>游戏速度:</big> <input class="input-text speed" type="text"></p>
+            <p class="input-wrapper"><big>一大波波次(使用|隔开):</big> <input class="input-text big_wave_flags" type="text"></p>
+            <p class="input-wrapper"><big>掉落:</big> <input class="input-text drops" type="text"></p>
+            <p class="input-wrapper"><big>最大半残刷新率:</big> <input class="input-text maximum_half" type="text"></p>
+            <p class="input-wrapper"><big>最小半残刷新率:</big> <input class="input-text minimum_half" type="text"></p>
+            <p class="input-wrapper"><big>BOSS_ID:</big> <input class="input-text boss" type="text"></p>
+            <p class="input-wrapper"><big>脚本<br>(EVAL_SHELL)<br>(使用|隔开):</big> <input class="input-text scripts" type="text"></p>
+        </div>
+        <center><big>卡片信息</big></center>
+        <div class="input-container">
+            <p class="input-wrapper"><big>固定卡槽?:</big> <input class="input-text choice fixed" type="checkbox"></p>
+            <p class="input-wrapper"><big>固定列表（使用|隔开）:</big> <input class="input-text list" type="text"></p>
+        </div>
+        <center><big>出怪信息</big></center>
+        <div class="input-container">
+            <center>静态僵尸</center>
+            <div class="static_zombie"></div>
+            <center>
+                <button onclick="addStatic()">添加</button>
+                <button onclick="deleteStatic()">删除</button>
+            </center>
+            <center>动态难度僵尸</center>
+            <div class="dynamic_zombie"></div>
+            <center>
+                <button onclick="addDynamic()">添加</button>
+                <button onclick="deleteDynamic()">删除</button>
+            </center>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="output">
+        <div class="LEVEL_JSON"></div>
+        <textarea class="outputBox"></textarea>
+        <div class="REGISTRY_JSON"></div>
+        <textarea class="outputBox2"></textarea>
+    </div>
+    <center>
+        <button onclick="generate()">点击生成</button>
+    </center>
+</div>
+<script>
+    var waveCounter = 0;
+    var waveCounter1 = 0;
+    var codecs = new JsonCodecsBuilder();
+    codecs.setOutput([document.querySelector('.outputBox'),document.querySelector('.outputBox2')]);
+    function getDynamicString(num) {
+        return `<div class="dynamic_element">第${num + 1}波<br>
+                    <p class="input-wrapper">波次点数奖励: <input class="input-text wave_point" type="text"></p>
+                    <p class="input-wrapper">出怪池(使用|隔开): <input class="input-text entities" type="text"></p>
+                </div>`;
+    }
+    function addDynamic() {
+        const container = document.querySelector('.dynamic_zombie');
+        container.insertAdjacentHTML('beforeend', getDynamicString(waveCounter1));
+        waveCounter1++;
+    }
+    function deleteDynamic() {
+        const container = document.querySelector('.dynamic_zombie');
+        const elements = container.querySelectorAll('.dynamic_element');
+        if (elements.length > 0) {
+            elements[elements.length - 1].remove();
+            waveCounter1--;
+        }
+    }
+    function getStaticString(num) {
+        return `<div class="static_element">第${num + 1}波<br>
+                    <p class="input-wrapper">出怪池(使用|隔开): <input class="input-text pool" type="text"></p>
+                </div>`;
+    }
+    function addStatic() {
+        const container = document.querySelector('.static_zombie');
+        container.insertAdjacentHTML('beforeend', getStaticString(waveCounter));
+        waveCounter++;
+    }
+    function deleteStatic() {
+        const container = document.querySelector('.static_zombie');
+        const elements = container.querySelectorAll('.static_element');
+        if (elements.length > 0) {
+            elements[elements.length - 1].remove();
+            waveCounter--;
+        }
+    }
+    function generate() {
+        codecs.generate();
+    }
+</script>
+</body>
+</html>

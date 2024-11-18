@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="IndexCanvas"></canvas>
+</body>
+<script type="module">
+    import kaplay from "/libs/kaplay.mjs"
+    // 初始化 Kaboom.js
+    kaplay({
+        global: true,
+        canvas: document.querySelector("#IndexCanvas"),
+        font: "UrdType",
+        background: [ 0, 0, 0, ],
+        backgroundAudio: true,
+        scale: 0.5,
+        width: 1280,
+        height: 720,
+        letterbox: true,
+        stretch: true,
+        crisp: true,
+        pixelDensity: 4
+    });
+
+    // 定义进度条的宽度、高度和位置
+    const barWidth = 200;
+    const barHeight = 10;
+    const barPosX = 500; // 进度条初始的右端位置
+    const barPosY = 250;
+
+    // 创建一个包含进度条的对象
+    const progressBar = add([
+        pos(barPosX, barPosY),
+        rect(barWidth, barHeight),
+        color(174,213,76), // 红色的进度条
+        anchor("right"), // 设置原点为右侧，使进度条从右向左增长
+    ]);
+
+    // 当前进度（0 到 1 之间）
+    let progress = 0.0;
+
+    // 更新进度条的函数
+    function updateProgressBar(newProgress) {
+        progress = clamp(newProgress, 0, 1); // 确保进度在 0 到 1 之间
+        progressBar.width = barWidth * progress;
+    }
+
+    // 示例：逐步增加进度
+    onUpdate(() => {
+        if (progress < 1) {
+            updateProgressBar(progress + 0.001); // 模拟进度增加
+        }
+    });
+</script>
+</html>

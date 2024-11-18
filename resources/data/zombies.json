@@ -1,0 +1,49 @@
+{
+  "registry_key": "ZOMBIE",
+  "registries": [
+    {
+      "key": "zombie",
+      "value": "/resources/data/entity/zombie/nzombie.json"
+    },
+    {
+      "key": "cap_zombie",
+      "value": "/resources/data/entity/zombie/cap_zombie.json"
+    },
+    {
+      "key": "iron_helmet_zombie",
+      "value": "/resources/data/entity/zombie/iron_helmet_zombie.json"
+    },
+    {
+      "key": "flag_zombie",
+      "value": "/resources/data/entity/zombie/flag_zombie.json"
+    },
+    {
+      "key": "skeleton",
+      "value": "/resources/data/entity/zombie/skeleton.json"
+    },
+    {
+      "key": "gargoyle_statue",
+      "value": "/resources/data/entity/zombie/gargoyle_statue.json"
+    },
+    {
+      "key": "gargoyle",
+      "value": "/resources/data/entity/zombie/gargoyle.json"
+    },
+    {
+      "key": "ghost",
+      "value": "/resources/data/entity/zombie/ghost.json"
+    },
+    {
+      "key": "mummy",
+      "value": "/resources/data/entity/zombie/mummy.json"
+    },
+    {
+      "key": "necromancer",
+      "value": "/resources/data/entity/zombie/necromancer.json"
+    },
+    {
+      "key": "bone_wall",
+      "value": "/resources/data/entity/zombie/bone_wall.json"
+    }
+  ]
+}

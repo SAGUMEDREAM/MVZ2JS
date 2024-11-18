@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物图鉴</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/almanac.css">
+</head>
+<body>
+<div class="box">
+    <div class="app">
+        <div class="almanac">
+            <div class="catalog">
+                <div class="plant" onclick="showDetails('plant1')">
+                    <img src="plant1.png" alt="Plant 1">
+                </div>
+                <div class="plant" onclick="showDetails('plant2')">
+                    <img src="plant2.png" alt="Plant 2">
+                </div>
+                <!-- Add more plants as needed -->
+            </div>
+            <div class="details">
+                <h2 id="plant-name">Plant Name</h2>
+                <img id="plant-image" src="" alt="Plant Image">
+                <p id="plant-description">Plant Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const plantDetails = {
+        plant1: {
+            name: "Plant 1",
+            image: "plant1.png",
+            description: "This is Plant 1. It has unique abilities to defend against zombies."
+        },
+        plant2: {
+            name: "Plant 2",
+            image: "plant2.png",
+            description: "This is Plant 2. It can shoot powerful projectiles at zombies."
+        }
+        // Add more plants as needed
+    };
+
+    function showDetails(plantId) {
+        const details = plantDetails[plantId];
+        document.getElementById('plant-name').textContent = details.name;
+        document.getElementById('plant-image').src = details.image;
+        document.getElementById('plant-description').textContent = details.description;
+    }
+
+</script>
+</body>
+</html>

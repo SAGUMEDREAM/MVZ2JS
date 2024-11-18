@@ -1,0 +1,10 @@
+{
+  "safe_mode": false,
+  "debug_mode": true,
+  "mods": [
+    "ExampleMod"
+  ],
+  "disabled": [
+    "ExampleMod"
+  ]
+}

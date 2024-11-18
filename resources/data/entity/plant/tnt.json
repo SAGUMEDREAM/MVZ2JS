@@ -1,0 +1,42 @@
+{
+  "class": "/src/entity/plant/TNT.js -> TNT",
+  "type": "plant",
+  "identifier": "tnt",
+  "max_health": 300,
+  "attacking_damage": 1500.0,
+  "attacking_colddown": 0.5,
+  "object_attribute": "COMMON",
+  "object_material": "FLESH",
+  "size": 1.15,
+  "sounds": {
+    "death": ["stone1","stone2","stone3","stone4"],
+    "block_sound": ["grass1","grass2","grass3"]
+  },
+  "vector": {
+    "max": 1,
+    "min": 1
+  },
+  "resources": {
+    "texture": "/resources/textures/plant/tnt.png",
+    "display": "/resources/textures/plant/tnt/0.png",
+    "properties": {
+      "sliceX": 1,
+      "anims": {
+        "normal": 0,
+        "wait": 0,
+        "start": 0
+      }
+    }
+  },
+  "states": [ "normal", "wait", "start" ],
+  "card": {
+    "type": "normal",
+    "redstone": 25,
+    "colddown_time": 25,
+    "first_no_colddown": false
+  },
+  "tags": [],
+  "objects": {
+    "waitTime": 4
+  }
+}

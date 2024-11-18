@@ -1,0 +1,11 @@
+{
+  "type": "world_level",
+  "identifier": "level0_1",
+  "properties": {
+    "scene": "game_room",
+    "level": "level0_1",
+    "dialog": "level0_1",
+    "feature": "world0",
+    "music": "grasswalk"
+  }
+}

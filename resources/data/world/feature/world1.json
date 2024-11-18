@@ -1,0 +1,44 @@
+{
+  "type": "feature",
+  "identifier": "world1",
+  "star_shard": "star_shard/0",
+  "trolley": "trolley/1",
+  "background": {
+    "texture": "/resources/textures/level/world1.png",
+    "offset": {
+      "x": 220,
+      "y": 0
+    }
+  },
+  "blocks": {
+    "texture": "place_block",
+    "location": {
+      "x": 341,
+      "y": 196
+    },
+    "offset": {
+      "x": 103.1,
+      "y": 103.3
+    },
+    "array": [
+      [{},{},{},{},{},{},{},{},{}],
+      [{},{},{},{},{},{},{},{},{}],
+      [{},{},{},{},{},{},{},{},{}],
+      [{},{},{},{},{},{},{},{},{}],
+      [{},{},{},{},{},{},{},{},{}]
+    ],
+    "special_settings": [
+      {
+        "key": {
+          "x": null,
+          "y": null
+        },
+        "value": {
+          "canPlace": true,
+          "isWater": false
+        }
+      }
+    ]
+  },
+  "objects": {}
+}

@@ -1,0 +1,87 @@
+.profiles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 35%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+.profiles p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.profile_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+}
+
+.profile_select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 20px; /* Add margin for better spacing */
+}
+
+.profile_list div {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile_list div:last-child {
+    border-bottom: none;
+}
+
+.profile_buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px; /* Add margin for better spacing */
+}
+
+.profile_buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #007bff;
+    color: white;
+}
+
+.profile_buttons button:hover {
+    background-color: #33b5e5;
+}
+
+.pbBtnAddUser, .pbBtnRename, .pbImportProfile, .pbExportProfile {
+    width: 48%; /* Make each button take half of the width with a small gap */
+}
+
+.pbBtnDelete, .pbBtnChange, .pbBtnCancel {
+    width: 30%; /* Adjust the width to fit three buttons in one row */
+    background-color: #33b5e5;
+}

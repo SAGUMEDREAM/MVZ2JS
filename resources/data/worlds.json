@@ -1,0 +1,9 @@
+{
+  "registry_key": "WORLD",
+  "registries": [
+    {
+      "key": "world1",
+      "value": "/resources/data/world/world1.json"
+    }
+  ]
+}

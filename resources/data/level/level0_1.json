@@ -1,0 +1,106 @@
+{
+  "name": "序章 - 前院",
+  "identifier": "level0_1",
+  "author": "[OFFICIAL]",
+  "daytime": true,
+  "conveyor_belt": false,
+  "has_boss": false,
+  "wave_point": 0,
+  "degree_of_difficulty": 1.0,
+  "speed": 1.0,
+  "big_wave_flags": [9],
+  "drops": null,
+  "maximum_half": 0.40,
+  "minimum_half": 0.32,
+  "cards": {
+    "fixed": true,
+    "list": [
+      "dispenser",
+      "furnace",
+      "obsidian",
+      "mine_tnt"
+    ]
+  },
+  "zombies": {
+    "static": [
+      {
+        "wave": 0,
+        "pool": []
+      }
+    ],
+    "dynamic": [
+      {
+        "wave": 0,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 1,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 2,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 3,
+        "wave_point": 150,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 4,
+        "wave_point": 200,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 5,
+        "wave_point": 150,
+        "entities": [
+          "cap_zombie"
+        ]
+      },{
+        "wave": 6,
+        "wave_point": 250,
+        "entities": [
+          "zombie","cap_zombie"
+        ]
+      },{
+        "wave": 7,
+        "wave_point": 300,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 8,
+        "wave_point": 300,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 9,
+        "wave_point": 1000,
+        "entities": [
+          "zombie","cap_zombie","iron_helmet_zombie"
+        ]
+      },{
+        "wave": 10,
+        "wave_point": 0,
+        "entities": [
+        ]
+      }
+    ]
+  },
+  "events": {
+    "start": null,
+    "end": "/src/event/level/Level0_1_end.js -> Level0_1_end"
+  },
+  "scripts": [],
+  "boss": null
+}

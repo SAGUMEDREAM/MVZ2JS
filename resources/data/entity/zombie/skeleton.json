@@ -1,0 +1,50 @@
+{
+  "class": "/src/entity/zombie/Skeleton.js -> Skeleton",
+  "type": "zombie",
+  "identifier": "skeleton",
+  "max_health": 200,
+  "armor_health": 0,
+  "armor_type": null,
+  "attacking_damage": 80,
+  "attacking_colddown": 48,
+  "object_attribute": "COMMON",
+  "object_material": "BONE",
+  "moving_speed": 1.0,
+  "size": 1.0,
+  "resources": {
+    "texture": "/resources/textures/zombie/skeleton.png",
+    "display": "/resources/textures/zombie/skeleton0.png",
+    "properties": {
+      "sliceX": 16,
+      "sliceY": 2,
+      "anims": {
+        "normal": 11,
+        "walking": {
+          "from": 0,
+          "to": 10,
+          "loop": true
+        },
+        "attacking": {
+          "from": 11,
+          "to": 21,
+          "loop": true
+        },
+        "death": 0
+      }
+    }
+  },
+  "sounds": {
+    "damage": ["hit1","hit2","hit3"],
+    "death": "skeleton_death"
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "cost": 100,
+  "weight": 4000,
+  "states": ["normal", "walking", "attacking", "death"],
+  "bypassLineAttacking": false,
+  "tags": [],
+  "objects": {}
+}

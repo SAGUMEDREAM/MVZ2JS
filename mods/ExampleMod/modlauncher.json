@@ -1,0 +1,17 @@
+{
+  "id": "example_mod",
+  "name": "Example MOD",
+  "version": "0.0.1",
+  "license": "MIT",
+  "entrypoints": {
+    "main": "/mods/ExampleMod/src/ExampleMod.js -> ExampleMod",
+    "mixin": "/mods/ExampleMod/src/mixin/ExampleMixin.js -> ExampleMixin"
+  },
+  "authors": [
+    "TM你叫啥名字啊？"
+  ],
+  "depends": [],
+  "description": [
+    "An Example Mod"
+  ]
+}

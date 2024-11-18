@@ -1,0 +1,42 @@
+{
+  "class": "/src/entity/zombie/BoneWall.js -> BoneWall",
+  "type": "zombie",
+  "identifier": "bone_wall",
+  "max_health": 1800,
+  "armor_health": 0,
+  "armor_type": null,
+  "attacking_damage": 0,
+  "attacking_colddown": 12,
+  "object_attribute": "COMMON",
+  "object_material": "BONE",
+  "moving_speed": 0.0,
+  "ignoring_calculate": true,
+  "size": 0.2,
+  "resources": {
+    "texture": "/resources/textures/zombie/bone_wall.png",
+    "display": "/resources/textures/zombie/bone_wall.png",
+    "properties": {
+      "sliceX": 1,
+      "anims": {
+        "normal": 0,
+        "walking": 0,
+        "attacking": 0,
+        "death": 0
+      }
+    }
+  },
+  "sounds": {
+    "damage": ["hit1","hit2","hit3"],
+    "death": "skeleton_death"
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "cost": 150,
+  "weight": 4000,
+  "states": ["normal", "walking", "attacking", "death"],
+  "bypassLineAttacking": false,
+  "tags": [],
+  "objects": {}
+}

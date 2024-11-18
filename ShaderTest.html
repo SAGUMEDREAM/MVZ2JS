@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shader Test</title>
+</head>
+<body>
+
+<script type="module">
+    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+
+    kaboom({
+    });
+
+    // 顶点着色器
+    const vertexShader = `vec4 vert(vec2 pos, vec2 uv, vec4 color) {
+    // predefined functions to get the default value by kaboom
+    return def_vert();
+}`;
+
+    // 片段着色器
+    const fireFragmentShader = `vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
+    // turn everything blue-ish
+    return def_frag() * vec4(0, 0, 1, 1);
+}
+    `;
+
+    // 加载着色器
+    loadShader("glow", vertexShader, fireFragmentShader, false);
+
+    // 加载资源
+    loadSprite("bean_test", "/resources/textures/plant/dispenser.png");
+
+    // 添加发光精灵
+    const bean = add([
+        sprite("bean_test"),
+        pos(center()),
+        anchor("center"),
+        scale(2),
+        shader("glow"),
+    ]);
+
+
+</script>
+
+</body>
+</html>

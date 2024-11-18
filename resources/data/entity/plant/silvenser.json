@@ -1,0 +1,33 @@
+{
+  "class": "/src/entity/plant/Silvenser.js -> Silvenser",
+  "type": "plant",
+  "identifier": "silvenser",
+  "max_health": 300,
+  "attacking_damage": 15.0,
+  "attacking_colddown": 1.5,
+  "object_attribute": "SHARPS",
+  "object_material": "FLESH",
+  "size": 1.15,
+  "sounds": {
+    "death": ["stone1","stone2","stone3","stone4"],
+    "block_sound": ["stone1","stone2","stone3","stone4"]
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "resources": {
+    "texture": "/resources/textures/plant/silvenser.png",
+    "display": "/resources/textures/plant/silvenser/0.png",
+    "properties":{}
+  },
+  "states": [ "normal" ],
+  "card": {
+    "type": "normal",
+    "redstone": 175,
+    "colddown_time": 5,
+    "first_no_colddown": false
+  },
+  "tags": [],
+  "objects": {}
+}

@@ -1,0 +1,29 @@
+{
+  "registry_key": "WORLD_LEVEL",
+  "registries": [
+    {
+      "key": "level0_1",
+      "value": "/resources/data/world/level/level0_1.json"
+    },
+    {
+      "key": "level1_1",
+      "value": "/resources/data/world/level/level1_1.json"
+    },
+    {
+      "key": "level1_2",
+      "value": "/resources/data/world/level/level1_2.json"
+    },
+    {
+      "key": "level1_3",
+      "value": "/resources/data/world/level/level1_3.json"
+    },
+    {
+      "key": "level1_4",
+      "value": "/resources/data/world/level/level1_4.json"
+    },
+    {
+      "key": "level1_5",
+      "value": "/resources/data/world/level/level1_5.json"
+    }
+  ]
+}

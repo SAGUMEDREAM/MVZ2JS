@@ -1,0 +1,51 @@
+{
+  "class": "/src/entity/plant/Obsidian.js -> Obsidian",
+  "type": "plant",
+  "identifier": "obsidian",
+  "max_health": 4000,
+  "attacking_damage": 1300.0,
+  "attacking_colddown": 0,
+  "object_attribute": "COMMON",
+  "object_material": "FLESH",
+  "size": 1.15,
+  "sounds": {
+    "death": ["stone1","stone2","stone3","stone4"],
+    "block_sound": ["stone1","stone2","stone3","stone4"]
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "resources": {
+    "texture": "/resources/textures/plant/obsidian.png",
+    "display": "/resources/textures/plant/obsidian/0.png",
+    "properties": {
+      "sliceX": 6,
+      "anims": {
+        "normal": 0,
+        "s0": 0,
+        "s1": 1,
+        "s2": 2,
+        "s3": 3,
+        "s4": 4,
+        "s5": 5
+      }
+    }
+  },
+  "states": [ "normal", "s0", "s1", "s2", "s3", "s4", "s5" ],
+  "card": {
+    "type": "normal",
+    "redstone": 50,
+    "colddown_time": 25,
+    "first_no_colddown": false
+  },
+  "tags": [],
+  "objects": {
+    "stage5": 8000,
+    "stage4": 6666,
+    "stage3": 5333,
+    "stage2": 4000,
+    "stage1": 2666,
+    "stage0": 1333
+  }
+}

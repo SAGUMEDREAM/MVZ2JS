@@ -1,0 +1,52 @@
+{
+  "class": "/src/entity/zombie/NZombie.js -> NZombie",
+  "type": "zombie",
+  "identifier": "zombie",
+  "max_health": 200,
+  "armor_health": 0,
+  "armor_type": null,
+  "attacking_damage": 80,
+  "attacking_colddown": 12,
+  "moving_speed": 1.0,
+  "size": 1.0,
+  "resources": {
+    "texture": "/resources/textures/zombie/zombie.png",
+    "display": "/resources/textures/zombie/zombie0.png",
+    "properties": {
+      "sliceX": 16,
+      "sliceY": 2,
+      "anims": {
+        "normal": 0,
+        "walking": {
+          "from": 1,
+          "to": 15,
+          "loop": true
+        },
+        "attacking": {
+          "from": 16,
+          "to": 22,
+          "loop": true
+        },
+        "death": {
+          "from": 23,
+          "to": 31,
+          "loop": false
+        }
+      }
+    }
+  },
+  "sounds": {
+    "damage": ["hit1","hit2","hit3"],
+    "death": "zombie_death"
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "cost": 100,
+  "weight": 4000,
+  "states": ["normal", "walking", "attacking", "death"],
+  "bypassLineAttacking": false,
+  "tags": [],
+  "objects": {}
+}

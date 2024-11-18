@@ -1,0 +1,38 @@
+{
+  "class": "/src/entity/plant/Glowstone.js -> Glowstone",
+  "type": "plant",
+  "identifier": "glowstone",
+  "max_health": 300,
+  "attacking_damage": 1.0,
+  "attacking_colddown": 30,
+  "object_attribute": "COMMON",
+  "object_material": "FLESH",
+  "size": 1.15,
+  "sounds": {
+    "death": ["stone1","stone2","stone3","stone4"],
+    "block_sound": ["stone1","stone2","stone3","stone4"]
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "resources": {
+    "texture": "/resources/textures/plant/glowstone.png",
+    "display": "/resources/textures/plant/glowstone/0.png",
+    "properties": {
+      "sliceX": 1,
+      "anims": {
+        "normal": 0
+      }
+    }
+  },
+  "states": [ "normal" ],
+  "card": {
+    "type": "normal",
+    "redstone": 50,
+    "colddown_time": 5,
+    "first_no_colddown": false
+  },
+  "tags": [],
+  "objects": {}
+}

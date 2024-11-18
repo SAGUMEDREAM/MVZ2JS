@@ -1,0 +1,22 @@
+{
+  "class": "/src/entity/bullet/BigSnowball.js -> BigSnowball",
+  "type": "bullet",
+  "identifier": "big_snowball",
+  "object_attribute": "COMMON",
+  "resources": {
+    "texture": "/resources/textures/bullet/snowball.png",
+    "props": {},
+    "sounds": {
+      "start": null,
+      "collide": null
+    }
+  },
+  "properties": {
+    "vector": 2,
+    "attacking_damage": 20,
+    "speed": 0.6,
+    "size": 1
+  },
+  "tags": [],
+  "objects": {}
+}

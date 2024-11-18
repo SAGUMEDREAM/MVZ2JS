@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVZ2JERedux</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="/libs/crypto-js.min.js"></script>
+    <script src="/libs/Base.js"></script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/almanac.css">
+    <link rel="stylesheet" href="/css/almanac_menu.css">
+    <link rel="stylesheet" href="/css/option.css">
+    <link rel="stylesheet" href="/css/crash_popup.css">
+    <link rel="stylesheet" href="/css/lose_menu.css">
+    <link rel="stylesheet" href="/css/profiles.css">
+    <link rel="stylesheet" href="/css/music_room.css">
+</head>
+<body>
+<div class="box">
+    <div class="app" style="display: none; pointer-events: none;">
+        <div class="music_room" style="display: none;">
+            <button class="return-button" id="return-button2">返回</button>
+            <div class="music_room_left">
+                <div class="music_room_play_list"></div>
+            </div>
+            <div class="music_room_right">
+                <h2 class="music_title">音乐标题</h2>
+                <div class="music_playing_title">正在播放：</div>
+                <div class="audio_container">
+                    <button class="play_button" id="playButton">Play / Pause</button>
+                    <input type="range" class="progress_bar" id="progressBar" value="0" max="400">
+                </div>
+                <div class="progress" style="text-align: right; font-family: Arial, sans-serif; font-size: 14px;">0:00 / 0:00</div>
+                <div class="music_description"></div>
+            </div>
+        </div>
+        <div class="profiles" style="display: none;">
+            <center><p>我是谁？</p></center>
+            <select class="profile_select"></select>
+            <div class="profile_buttons">
+                <button class="pbImportProfile">导入档案</button>
+                <button class="pbExportProfile">导出档案</button>
+            </div>
+            <div class="profile_buttons">
+                <button class="pbBtnAddUser">添加用户</button>
+                <button class="pbBtnRename">修改名称</button>
+            </div>
+            <div class="profile_buttons">
+                <button class="pbBtnDelete">删除</button>
+                <button class="pbBtnChange">选中</button>
+                <button class="pbBtnCancel">取消</button>
+            </div>
+        </div>
+        <div class="almanac_menu" style="display: none;">
+            <button class="return-button" id="return-button1">返回</button>
+            <div class="top-left">
+                <button class="button">查看其他</button>
+            </div>
+            <div class="top-right">
+                <button class="button">查看人物</button>
+            </div>
+            <div class="bottom-left">
+                <img src="/resources/textures/plant/furnace_off.png" alt="Image 3">
+                <button class="button check_weapon">查看器械</button>
+            </div>
+            <div class="bottom-right">
+                <img src="/resources/textures/zombie/zombie0.png" alt="Image 4">
+                <button class="button check_monster">查看怪物</button>
+            </div>
+        </div>
+        <div class="almanac" style="display: none;">
+            <div class="catalog">
+            </div>
+            <div class="details">
+                <div class="button almanacBackBtn" onclick="" style="position: absolute; top: 10px; right: 10px; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); cursor: pointer; width: 15%; text-align: center;">
+                    <span>返回</span>
+                </div>
+                <h2 id="almanac-name"></h2>
+                <img id="almanac-image" src="" draggable="false">
+                <p id="almanac-description"></p>
+            </div>
+        </div>
+        <div class="crash_popup" style="display: none;">
+            <center><h3>崩溃日志</h3></center>
+            <div class="logger"></div>
+        </div>
+        <div class="popup" style="display: none">
+            <div class="slider-container">
+                <label>
+                    音乐: <span id="volume-value">50%</span>
+                    <input type="range" id="volume-slider" min="0" max="100" value="50" oninput="">
+                </label>
+            </div>
+            <div class="slider-container">
+                <label>
+                    音效: <span id="effect-value">50%</span>
+                    <input type="range" id="effect-slider" min="0" max="100" value="50" oninput="">
+                </label>
+            </div>
+            <div class="buttons">
+                <div class="button opBtnFullscreen">
+                    <span>全屏</span>
+                </div>
+                <div class="button opBtnDifficulty">
+                    <span>难度</span>
+                </div>
+                <div class="button opBackToMap">
+                    <span>返回地图</span>
+                </div>
+                <div class="button opBtnBack">
+                    <span>返回</span>
+                </div>
+            </div>
+        </div>
+        <div class="loseLevelMenu" style="display: none">
+            <div class="loseText">
+                <p class="LTB"><big>游戏结束</big></p>
+                <p class="LT2"> </p>
+            </div>
+            <div class="buttons">
+                <div class="button lstRestart">
+                    <span>重新开始</span>
+                </div>
+                <div class="button lstBackMap">
+                    <span>返回地图</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas class="h5canvas"></canvas>
+    <canvas class="util0"></canvas>
+</div>
+<script type="module" src="/src/Main.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "type": "DIALOG",
+  "identifier": "level0_1_end",
+  "dialogs": [
+    {
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "这看起来像是一个藏宝图啊！",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "顺着这个藏宝图，我们也许能找到一些神奇的东西！",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "你觉得这个藏宝图的重点埋藏着什么呢？",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "说不定是幻想乡的入口呢！",
+      "sound": ["l1","l2","l3"]
+    },{
+      "name": "坑爹村民",
+      "toward": "right",
+      "texture": "character/villager",
+      "text": "好了，让我们一探究竟吧！",
+      "sound": ["l1","l2","l3"]
+    }
+  ],
+  "objects": {}
+}

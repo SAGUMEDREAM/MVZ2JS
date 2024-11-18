@@ -1,0 +1,50 @@
+{
+  "class": "/src/entity/plant/MagicChest.js -> MagicChest",
+  "type": "plant",
+  "identifier": "magic_chest",
+  "max_health": 4000,
+  "attacking_damage": 1300.0,
+  "attacking_colddown": 0,
+  "object_attribute": "COMMON",
+  "object_material": "FLESH",
+  "size": 1.15,
+  "sounds": {
+    "death": ["stone1","stone2","stone3","stone4"],
+    "block_sound": ["stone1","stone2","stone3","stone4"]
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "resources": {
+    "texture": "/resources/textures/plant/magic_chest.png",
+    "display": "/resources/textures/plant/magic_chest/0.png",
+    "properties": {
+      "sliceX": 16,
+      "anims": {
+        "normal": 0,
+        "update": {
+          "from": 0,
+          "to": 5,
+          "loop": false
+        }
+      }
+    }
+  },
+  "states": [ "normal", "s0", "s1", "s2", "s3", "s4", "s5" ],
+  "card": {
+    "type": "normal",
+    "redstone": 50,
+    "colddown_time": 25,
+    "first_no_colddown": false
+  },
+  "tags": [],
+  "objects": {
+    "stage5": 8000,
+    "stage4": 6666,
+    "stage3": 5333,
+    "stage2": 4000,
+    "stage1": 2666,
+    "stage0": 1333
+  }
+}

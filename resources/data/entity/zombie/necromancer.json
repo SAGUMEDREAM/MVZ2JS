@@ -1,0 +1,49 @@
+{
+  "class": "/src/entity/zombie/Necromancer.js -> Necromancer",
+  "type": "zombie",
+  "identifier": "necromancer",
+  "max_health": 200,
+  "armor_health": 0,
+  "armor_type": null,
+  "attacking_damage": 80,
+  "attacking_colddown": 48,
+  "object_attribute": "COMMON",
+  "object_material": "BONE",
+  "moving_speed": 1.0,
+  "size": 1.0,
+  "resources": {
+    "texture": "/resources/textures/zombie/necromancer.png",
+    "display": "/resources/textures/zombie/necromancer0.png",
+    "properties": {
+      "sliceX": 16,
+      "anims": {
+        "normal": 0,
+        "walking": {
+          "from": 1,
+          "to": 11,
+          "loop": true
+        },
+        "attack": {
+          "from": 1,
+          "to": 11,
+          "loop": true
+        },
+        "death": 0
+      }
+    }
+  },
+  "sounds": {
+    "damage": ["hit1","hit2","hit3"],
+    "death": "skeleton_death"
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "cost": 100,
+  "weight": 4000,
+  "states": ["normal", "walking", "death"],
+  "bypassLineAttacking": false,
+  "tags": [],
+  "objects": {}
+}

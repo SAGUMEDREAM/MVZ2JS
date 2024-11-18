@@ -1,0 +1,40 @@
+{
+  "class": "/src/entity/plant/SoulForge.js -> SoulForge",
+  "type": "plant",
+  "identifier": "soul_forge",
+  "max_health": 300,
+  "attacking_damage": 20.0,
+  "attacking_colddown": 1.5,
+  "object_attribute": "FIRE",
+  "object_material": "FLESH",
+  "size": 1.15,
+  "sounds": {
+    "death": ["stone1","stone2","stone3","stone4"],
+    "block_sound": ["stone1","stone2","stone3","stone4"]
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "resources": {
+    "texture": "/resources/textures/plant/soul_forge.png",
+    "display": "/resources/textures/plant/soul_forge/0.png",
+    "properties": {
+      "sliceX": 16,
+      "anims": {
+        "normal": 0,
+        "on": 1,
+        "off": 0
+      }
+    }
+  },
+  "states": [ "normal", "on", "off" ],
+  "card": {
+    "type": "normal",
+    "redstone": 225,
+    "colddown_time": 5,
+    "first_no_colddown": false
+  },
+  "tags": [],
+  "objects": {}
+}

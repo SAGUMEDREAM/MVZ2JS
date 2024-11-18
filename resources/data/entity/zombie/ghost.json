@@ -1,0 +1,36 @@
+{
+  "class": "/src/entity/zombie/Ghost.js -> Ghost",
+  "type": "zombie",
+  "identifier": "ghost",
+  "max_health": 200,
+  "armor_health": 0,
+  "armor_type": null,
+  "attacking_damage": 80,
+  "attacking_colddown": 12,
+  "moving_speed": 1.0,
+  "size": 1.0,
+  "resources": {
+    "texture": "/resources/textures/zombie/ghost.png",
+    "display": "/resources/textures/zombie/ghost0.png",
+    "properties": {
+      "sliceX": 1,
+      "anims": {
+        "normal": 0
+      }
+    }
+  },
+  "sounds": {
+    "damage": ["hit1","hit2","hit3"],
+    "death": "skeleton_death"
+  },
+  "vector": {
+    "max": 2,
+    "min": 1
+  },
+  "cost": 100,
+  "weight": 4000,
+  "states": ["normal", "walking", "attacking", "death"],
+  "bypassLineAttacking": false,
+  "tags": [],
+  "objects": {}
+}

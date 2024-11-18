@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+.box {
+    position: relative; /* 父容器需要设置相对定位 */
+    width: 100%;
+    height: 100%;
+}
+.app,
+.h5canvas,
+.util0 {
+    position: absolute; /* 子元素绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    z-index: 3; /* 设置堆叠顺序 */
+}
+
+.app {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+}
+
+.h5canvas {
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.util0 {
+    z-index: 1;
+}

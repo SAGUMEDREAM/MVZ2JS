@@ -1,0 +1,13 @@
+{
+  "registry_key": "WORLD_FEATURE",
+  "registries": [
+    {
+      "key": "world0",
+      "value": "/resources/data/world/feature/world0.json"
+    },
+    {
+      "key": "world1",
+      "value": "/resources/data/world/feature/world1.json"
+    }
+  ]
+}

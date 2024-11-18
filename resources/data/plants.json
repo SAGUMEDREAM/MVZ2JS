@@ -1,0 +1,52 @@
+{
+  "registry_key": "PLANT",
+  "registries": [
+    {
+      "key": "dispenser",
+      "value": "/resources/data/entity/plant/dispenser.json"
+    },
+    {
+      "key": "furnace",
+      "value": "/resources/data/entity/plant/furnace.json"
+    },
+    {
+      "key": "obsidian",
+      "value": "/resources/data/entity/plant/obsidian.json"
+    },
+    {
+      "key": "mine_tnt",
+      "value": "/resources/data/entity/plant/mine_tnt.json"
+    },
+    {
+      "key": "small_dispenser",
+      "value": "/resources/data/entity/plant/small_dispenser.json"
+    },
+    {
+      "key": "moonlight_sensor",
+      "value": "/resources/data/entity/plant/moonlight_sensor.json"
+    },
+    {
+      "key": "glowstone",
+      "value": "/resources/data/entity/plant/glowstone.json"
+    },
+    {
+      "key": "piston",
+      "value": "/resources/data/entity/plant/piston.json"
+    },
+    {
+      "key": "tnt",
+      "value": "/resources/data/entity/plant/tnt.json"
+    },
+    {
+      "key": "soul_forge",
+      "value": "/resources/data/entity/plant/soul_forge.json"
+    },
+    {
+      "key": "silvenser",
+      "value": "/resources/data/entity/plant/silvenser.json"
+    },{
+      "key": "magic_chest",
+      "value": "/resources/data/entity/plant/magic_chest.json"
+    }
+  ]
+}

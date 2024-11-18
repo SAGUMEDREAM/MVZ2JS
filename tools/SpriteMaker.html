@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG Sprite Sheet Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+        #dropZone {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #aaa;
+        }
+        #dropZone.dragover {
+            border-color: #000;
+            color: #000;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<h1>PNG Sprite Sheet Generator</h1>
+<input type="file" id="fileInput" multiple accept="image/png">
+<div id="dropZone">Drag and drop PNG files here</div>
+<button id="generateButton">Generate Sprite Sheet</button>
+<br><br>
+<canvas id="canvas"></canvas>
+<br><br>
+<a id="downloadLink" download="spriteSheet.png">Download Sprite Sheet</a>
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const dropZone = document.getElementById('dropZone');
+    const generateButton = document.getElementById('generateButton');
+    const canvas = document.getElementById('canvas');
+    const downloadLink = document.getElementById('downloadLink');
+    const ctx = canvas.getContext('2d');
+
+    let images = [];
+
+    fileInput.addEventListener('change', handleFiles);
+    dropZone.addEventListener('dragover', handleDragOver);
+    dropZone.addEventListener('dragleave', handleDragLeave);
+    dropZone.addEventListener('drop', handleDrop);
+    generateButton.addEventListener('click', generateSpriteSheet);
+
+    function handleFiles(event) {
+        images = [];
+        const files = event.target.files;
+        loadFiles(files);
+    }
+
+    function handleDragOver(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dropZone.classList.add('dragover');
+    }
+
+    function handleDragLeave(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dropZone.classList.remove('dragover');
+    }
+
+    function handleDrop(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dropZone.classList.remove('dragover');
+        images = [];
+        const files = event.dataTransfer.files;
+        loadFiles(files);
+    }
+
+    function loadFiles(files) {
+        const promises = [];
+        for (let i = 0; i < files.length; i++) {
+            promises.push(loadImage(URL.createObjectURL(files[i])));
+        }
+        Promise.all(promises).then(loadedImages => {
+            images = loadedImages;
+        });
+    }
+
+    function loadImage(src) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+            img.src = src;
+        });
+    }
+
+    function generateSpriteSheet() {
+        if (images.length === 0) {
+            alert('Please select some images first.');
+            return;
+        }
+
+        // Assuming all images have the same dimensions
+        const spriteWidth = images[0].width;
+        const spriteHeight = images[0].height;
+
+        // Calculate the number of columns and rows
+        const columns = 16;
+        const rows = Math.ceil(images.length / columns);
+
+        // Set canvas dimensions
+        canvas.width = spriteWidth * columns;
+        canvas.height = spriteHeight * rows;
+
+        // Draw images to canvas
+        for (let i = 0; i < images.length; i++) {
+            const x = (i % columns) * spriteWidth;
+            const y = Math.floor(i / columns) * spriteHeight;
+            ctx.drawImage(images[i], x, y, spriteWidth, spriteHeight);
+        }
+
+        // Create a download link for the sprite sheet
+        canvas.toBlob(blob => {
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+        });
+    }
+</script>
+</body>
+</html>

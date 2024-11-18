@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapMaker</title>
+    <script src="/libs/psd.min.js"></script> <!-- 引用 psd.js -->
+</head>
+<body>
+<input type="file" id="upload" accept=".psd">
+<div id="output"></div>
+<div id="json-output" style="white-space: pre-wrap;"></div>
+
+<script>
+    var PSD = require('psd');
+    document.getElementById('upload').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const buffer = e.target.result;
+            const psd = new PSD(new Uint8Array(buffer));
+            psd.parse();
+
+            const canvasWidth = psd.header.width;
+            const canvasHeight = psd.header.height;
+            const canvasCenterX = canvasWidth / 2;
+            const canvasCenterY = canvasHeight / 2;
+
+            const layers = psd.tree().descendants();
+            const arr = [];
+            let output = '';
+            layers.forEach(layer => {
+                if (layer.isGroup()) return;
+                const { left, top, right, bottom, name } = layer.export();
+                const width = right - left;
+                const height = bottom - top;
+                const layerCenterX = left + width / 2;
+                const layerCenterY = top + height / 2;
+                const distanceX = layerCenterX - canvasCenterX;
+                const distanceY = layerCenterY - canvasCenterY;
+
+
+                output += `<p>Layer: ${layer.name}<br>Distance from center: X=${distanceX}, Y=${distanceY}</p>`;
+                output += `<p>vec2(${distanceX},${distanceY})</p>`;
+                arr.push({notes: name,x: distanceX, y: distanceY, world_level: null, condition: null, boss: false, mini_game: false});
+            });
+
+            const jsonOutput = JSON.stringify(arr, null, 2);
+            console.log(jsonOutput);
+            document.getElementById('output').innerHTML = output;
+            document.getElementById('json-output').textContent = jsonOutput;
+        };
+        reader.readAsArrayBuffer(file);
+    });
+</script>
+</body>
+</html>

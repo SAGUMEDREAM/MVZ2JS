@@ -1,0 +1,13 @@
+{
+  "registry_key": "DIALOG",
+  "registries": [
+    {
+      "key": "level0_1",
+      "value": "/resources/data/dialog/level0_1.json"
+    },
+    {
+      "key": "level0_1",
+      "value": "/resources/data/dialog/level0_1_end.json"
+    }
+  ]
+}

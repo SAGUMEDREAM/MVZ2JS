@@ -1,0 +1,24 @@
+{
+  "registry_key": "BULLET",
+  "registries": [
+    {
+      "key": "arrow0",
+      "value": "/resources/data/bullet/arrow0.json"
+    },{
+      "key": "snowball",
+      "value": "/resources/data/bullet/snowball.json"
+    },{
+      "key": "big_snowball",
+      "value": "/resources/data/bullet/big_snowball.json"
+    },{
+      "key": "soul_fireball",
+      "value": "/resources/data/bullet/soul_fireball.json"
+    },{
+      "key": "knife",
+      "value": "/resources/data/bullet/knife.json"
+    },{
+      "key": "knife2",
+      "value": "/resources/data/bullet/knife2.json"
+    }
+  ]
+}

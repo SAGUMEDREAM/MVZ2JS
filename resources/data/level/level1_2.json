@@ -1,0 +1,97 @@
+{
+  "name": "万圣夜 - 第2天",
+  "identifier": "level1_2",
+  "author": "[OFFICIAL]",
+  "daytime": false,
+  "conveyor_belt": false,
+  "has_boss": false,
+  "wave_point": 0,
+  "degree_of_difficulty": 1.0,
+  "speed": 1.0,
+  "big_wave_flags": [11],
+  "drops": "moonlight_sensor",
+  "maximum_half": 0.40,
+  "minimum_half": 0.32,
+  "cards": {
+    "fixed": false,
+    "list": [
+      "dispenser",
+      "furnace",
+      "obsidian",
+      "mine_tnt"
+    ]
+  },
+  "zombies": {
+    "static": [
+      {
+        "wave": 0,
+        "pool": []
+      }
+    ],
+    "dynamic": [
+      {
+        "wave": 0,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 1,
+        "wave_point": 100,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 2,
+        "wave_point": 200,
+        "entities": [
+          "zombie"
+        ]
+      },{
+        "wave": 3,
+        "wave_point": 100,
+        "entities": [
+          "skeleton"
+        ]
+      },{
+        "wave": 4,
+        "wave_point": 100,
+        "entities": [
+          "skeleton"
+        ]
+      },{
+        "wave": 5,
+        "wave_point": 250,
+        "entities": [
+          "zombie",
+          "cap_zombie"
+        ]
+      },{
+        "wave": 6,
+        "wave_point": 200,
+        "entities": [
+          "zombie",
+          "skeleton"
+        ]
+      },{
+        "wave": 7,
+        "wave_point": 700,
+        "entities": [
+          "zombie",
+          "skeleton"
+        ]
+      },{
+        "wave": 8,
+        "wave_point": 0,
+        "entities": [
+        ]
+      }
+    ]
+  },
+  "events": {
+    "start": "/src/event/level/RandomGStatue.js -> RandomGStatue",
+    "end": null
+  },
+  "scripts": [],
+  "boss": null
+}

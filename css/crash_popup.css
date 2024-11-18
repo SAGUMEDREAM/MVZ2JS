@@ -1,0 +1,26 @@
+.crash_popup {
+    width: 60%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 80vh; /* 确保弹窗不会超出视窗高度 */
+    overflow-y: auto; /* 当内容超出最大高度时启用滚动 */
+}
+
+.crash_popup h3 {
+    margin-top: 0;
+}
+
+.crash_popup .logger {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}

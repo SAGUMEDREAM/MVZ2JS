@@ -1,0 +1,11 @@
+{
+  "type": "world_level",
+  "identifier": "level1_2",
+  "properties": {
+    "scene": "game_room",
+    "level": "level1_2",
+    "dialog": null,
+    "feature": "world1",
+    "music": "halloween"
+  }
+}

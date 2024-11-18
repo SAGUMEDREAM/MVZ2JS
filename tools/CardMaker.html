@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Merger</title>
+</head>
+<body>
+<h1>Upload Images and Enter Text</h1>
+<form id="imageForm">
+    <label for="image1">卡片背景:</label>
+    <input type="file" id="image1" accept="image/*" required><br><br>
+    <label for="image2">器械:</label>
+    <input type="file" id="image2" accept="image/*" required><br><br>
+    <label for="text">Text:</label>
+    <input type="text" id="text" required><br><br>
+    <button type="submit">Merge Images</button>
+</form>
+<h2>Merged Image:</h2>
+<img id="mergedImage" alt="Merged Image will appear here">
+
+<script>
+    document.getElementById('imageForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const image1 = document.getElementById('image1').files[0];
+        const image2 = document.getElementById('image2').files[0];
+        const text = document.getElementById('text').value;
+
+        if (image1 && image2 && text) {
+            const url1 = URL.createObjectURL(image1);
+            const url2 = URL.createObjectURL(image2);
+
+            mergeImagesUrlsV2(url1, url2, text, {
+                font: '20px Arial',
+                color: 'black',
+                align: 'center',
+                baseline: 'middle'
+            }).then(mergedUrl => {
+                document.getElementById('mergedImage').src = mergedUrl;
+                URL.revokeObjectURL(url1);
+                URL.revokeObjectURL(url2);
+            }).catch(error => {
+                console.error('Error merging images:', error);
+            });
+        } else {
+            alert('Please upload both images and enter the text.');
+        }
+    });
+
+    function mergeImagesUrlsV2(url1, url2, text, textOptions) {
+        return new Promise((resolve, reject) => {
+            const img1 = new Image();
+            const img2 = new Image();
+
+            img1.crossOrigin = "Anonymous";
+            img2.crossOrigin = "Anonymous";
+
+            let loaded = 0;
+            const onLoad = () => {
+                if (++loaded === 2) {
+                    resolve(mergeImagesV2(img1, img2, text, textOptions));
+                }
+            };
+
+            img1.onload = onLoad;
+            img2.onload = onLoad;
+
+            img1.onerror = reject;
+            img2.onerror = reject;
+
+            img1.src = url1;
+            img2.src = url2;
+        });
+    }
+
+    function mergeImagesV2(img1, img2, text, textOptions) {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+
+        canvas.width = img1.width;
+        canvas.height = img1.height;
+
+        context.drawImage(img1, 0, 0, img1.width, img1.height);
+
+        const contentXMin = 4;
+        const contentYMin = 4;
+        const contentXMax = 216;
+        const contentYMax = 144;
+        const contentMaxWidth = contentXMax - contentXMin;
+        const contentMaxHeight = contentYMax - contentYMin;
+
+        const scale = Math.min(contentMaxWidth / img2.width, contentMaxHeight / img2.height);
+        const newWidth = img2.width * scale;
+        const newHeight = img2.height * scale;
+        const offsetX = contentXMin + (contentMaxWidth - newWidth) / 2;
+        const offsetY = contentYMin + (contentMaxHeight - newHeight) / 2;
+
+        context.drawImage(img2, offsetX, offsetY, newWidth, newHeight);
+
+        if (text) {
+            const { font = 'bold 23px Arial', color = 'black', align = 'center', baseline = 'middle' } = textOptions || {};
+            context.font = font;
+            context.fillStyle = color;
+            context.textAlign = align;
+            context.textBaseline = baseline;
+
+            const textXMin = 224;
+            const textYMin = 111;
+            const textXMax = 263;
+            const textYMax = 139;
+            const textMaxWidth = textXMax - textXMin;
+            const textMaxHeight = textYMax - textYMin;
+
+            const textX = textXMin + textMaxWidth / 2;
+            const textY = textYMin + textMaxHeight / 2;
+            context.fillText(text, textX, textY, textMaxWidth);
+        }
+
+        const dataUrl = canvas.toDataURL('image/png');
+        const blob = dataURLToBlob(dataUrl);
+        return URL.createObjectURL(blob);
+    }
+
+    function dataURLToBlob(dataUrl) {
+        const arr = dataUrl.split(',');
+        const mime = arr[0].match(/:(.*?);/)[1];
+        const bstr = atob(arr[1]);
+        let n = bstr.length;
+        const u8arr = new Uint8Array(n);
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new Blob([u8arr], { type: mime });
+    }
+</script>
+</body>
+</html>

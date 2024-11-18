@@ -1,0 +1,9 @@
+{
+  "registry_key": "ACHIEVEMENT",
+  "registries": [
+    {
+      "key": "example",
+      "value": "/resources/data/achievement/example.json"
+    }
+  ]
+}
