@@ -12,7 +12,6 @@
 ### 详细信息
 游戏原作者：[Cuerzor58](https://space.bilibili.com/348514)<br>
 原作：Minecraft Vs Zombies II / 东方Project (上海アリス幻楽団) / Plants vs. Zombies (PopCap Games, Inc.) / Minecraft (Mojang Studios)<br>
-代码：[稀神灵梦](https://space.bilibili.com/158597454)<br>
 使用引擎/库：[Kaplay (KaboomJS)](https://kaplayjs.com/)、nw-builder
 
 ### 模组加载器
