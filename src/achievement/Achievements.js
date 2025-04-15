@@ -5,9 +5,11 @@ import {JsonCodecs} from "/src/registry/Codecs.js";
 
 export class Achievements {
     static CODECS = [];
+
     static init() {
         Achievements.initCodecs("/resources/data/achievements.json");
     }
+
     static initCodecs(input) {
         Achievements.CODECS.push(new JsonCodecs(input).apply((object) => {
             let registryKey = object["registry_key"];
@@ -18,12 +20,13 @@ export class Achievements {
                 new JsonCodecs(value).apply((object) => {
                     let identifier = object["identifier"];
                     key = identifier;
-                    Registries.CODECS.get(Registries.ACHIEVEMENT).register(identifier,object);
+                    Registries.CODECS.get(Registries.ACHIEVEMENT).register(identifier, object);
                     Achievements.registerAchievement(identifier, object);
                 });
             });
         }));
     }
+
     static addAchievement(identifier) {
         let data = ProfileManager.manager.getData();
         let achievements = data["game_data"]["achievements"];
@@ -40,7 +43,8 @@ export class Achievements {
             achievements.splice(index, 1);
         }
     }
-    static registerAchievement(key,codecsObject) {
+
+    static registerAchievement(key, codecsObject) {
         return Registries.ACHIEVEMENT.register(key, new Achievement(codecsObject));
     }
 }

@@ -55,7 +55,7 @@ export class Feature {
             this.blockOffsetY = this.blockOffset["y"] || this.blockOffset.y;
         }
         this.blockArray = blocksObj["array"];
-        this.blockMaxX = this.calculateMaxLen(blocksObj["array"]);
+        this.blockMaxX = this.calculateMaxLen(this.blockArray);
         this.blockMaxY = this.blockArray.length;
         this.blockSpecialSettings = blocksObj["special_settings"];
         let objects = this.codecObject["objects"];

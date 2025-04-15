@@ -1,12 +1,7 @@
-import kaboom from "/libs/kaboom.mjs";
 import {GameState} from "/src/util/GameState.js";
 import {detectDevice} from "/src/util/Utils.js";
 import {HTMLTool} from "/src/util/HTMLTool.js";
-import {Option} from "/src/gui/ui/Option.js";
-import {Crasher} from "../gui/ui/Crasher.js";
-import {ESC} from "../gui/ui/ESC.js";
-import {LoseLevel} from "../gui/ui/LoseLevel.js";
-import {Profiles} from "../gui/ui/Profiles.js";
+
 export class Constants {
     static debugMode = true;
     static mainClient = null;

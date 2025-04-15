@@ -6,7 +6,7 @@
   "attacking_damage": 20.0,
   "attacking_colddown": 1.5,
   "object_attribute": "COMMON",
-  "object_material": "FLESH",
+  "object_materoial": "FLESH",
   "size": 1.15,
   "sounds": {
     "death": ["stone1","stone2","stone3","stone4"],

@@ -7,26 +7,31 @@ import {ProfileManager} from "/src/util/GameProfile.js";
 
 export class StarShard extends Item {
     static texture = "";
+
     static setTexture(texture) {
         return StarShard.texture = texture;
     }
-    static spawnStarShard(blockX,blockY) {
-        if(this.texture == null || !ProfileManager.manager.getData()["game_data"]["levels"].includes("level1_1")) return null;
-        return new StarShard(blockX,blockY).spawn();
+
+    static spawnStarShard(blockX, blockY) {
+        if (this.texture == null || !ProfileManager.manager.getData()["game_data"]["levels"].includes("level1_1")) return null;
+        return new StarShard(blockX, blockY).spawn();
     }
+
     blockX;
     blockY;
     itemInstance;
     eventArray = [];
     lock = false;
-    constructor(blockX,blockY) {
+
+    constructor(blockX, blockY) {
         super();
         this.blockX = blockX;
         this.blockY = blockY;
         this.setId("star_shard");
     }
+
     spawn() {
-        let vec = vec2(this.blockX,this.blockY);
+        let vec = vec2(this.blockX, this.blockY);
         this.itemInstance = add([
             sprite(`${StarShard.texture}`),
             pos(vec),
@@ -39,11 +44,11 @@ export class StarShard extends Item {
             `star_shard`
         ]);
         this.eventArray[0] = this.itemInstance.onClick(() => {
-            if(this.lock == false) {
+            if (this.lock == false) {
                 this.lock = true;
                 SoundLoader.playSound("star_shard_use");
-                if(StarShardIframe.getStarShard() <= StarShardIframe.getMaxStick()) {
-                    moveTo(this.itemInstance, vec2(532,698), "easeOutCubic");
+                if (StarShardIframe.getStarShard() <= StarShardIframe.getMaxStick()) {
+                    moveTo(this.itemInstance, vec2(532, 698), "easeOutCubic");
                     StarShardIframe.addStarShard(1);
                     wait(0.75, () => {
                         this.endThread();
@@ -51,10 +56,10 @@ export class StarShard extends Item {
                 }
             }
         });
-        if(this.itemInstance != null) {
+        if (this.itemInstance != null) {
             this.itemInstance.opacity = 1;
             this.eventArray.push(wait(8, () => {
-                if(this.itemInstance != null && this.lock == false) {
+                if (this.itemInstance != null && this.lock == false) {
                     tween(
                         this.itemInstance.opacity,
                         0,
@@ -66,21 +71,22 @@ export class StarShard extends Item {
                     let wt = wait(0.54, () => {
                         this.endThread();
                     })
-                    if(wt.cancel) wt.cancel();
+                    if (wt.cancel) wt.cancel();
                 }
             }))
         }
         SoundLoader.playSound("star_shard_appear");
         return this;
     }
+
     endThread() {
-        if(this.itemInstance != null) destroy(this.itemInstance);
+        if (this.itemInstance != null) destroy(this.itemInstance);
         this.eventArray.forEach(task => {
-            if(task.cancel) {
+            if (task.cancel) {
                 task.cancel();
             }
         });
-        if(this.eventArray.length) this.eventArray.length = 0;
+        if (this.eventArray.length) this.eventArray.length = 0;
         free(this);
     }
 }

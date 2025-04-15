@@ -37,19 +37,21 @@ export class Main {
     textureLoader = null;
     modLoader = null;
     mixinLoader = null;
+
     constructor() {
-        KaplayLogger.log("main",`Loading KaplayJS (KaboomJS) VERSION ${VERSION}`)
-        KaplayLogger.log("main",`Loading Minecraft Vs Zombies II ${Constants.version}`)
-        KaplayLogger.log("main","The main stage is executing.")
-        KaplayLogger.printf("main/WARN","It's Open Source Minecraft Vs Zombies 2 JavaScript Edition");
-        KaplayLogger.printf("main/WARN","Original Work；上海アリス幻楽団 / Minecraft Vs. Zombies 2（Cuerzor58）/ Plants vs. Zombies（PopCap Games / Inc.）");
-        KaplayLogger.printf("main/WARN","This is a secondary/tertiary fan creation based on the original work 'Minecraft Vs. Zombies 2' and its fan derivatives.");
-        KaplayLogger.printf("main/WARN","Github：https://github.com/SAGUMEDREAM/MVZ2JS");
+        KaplayLogger.log("main", `Loading KaplayJS (KaboomJS) VERSION ${VERSION}`)
+        KaplayLogger.log("main", `Loading Minecraft Vs Zombies II ${Constants.version}`)
+        KaplayLogger.log("main", "The main stage is executing.")
+        KaplayLogger.printf("main/WARN", "It's Open Source Minecraft Vs Zombies 2 JavaScript Edition");
+        KaplayLogger.printf("main/WARN", "Original Work；上海アリス幻楽団 / Minecraft Vs. Zombies 2（Cuerzor58）/ Plants vs. Zombies（PopCap Games / Inc.）");
+        KaplayLogger.printf("main/WARN", "This is a secondary/tertiary fan creation based on the original work 'Minecraft Vs. Zombies 2' and its fan derivatives.");
+        KaplayLogger.printf("main/WARN", "Github：https://github.com/SAGUMEDREAM/MVZ2JS");
     }
+
     start() {
         this.mixinLoader = new MixinLoader();
         Constants.profileManager = new ProfileManager();
-        KaplayLogger.printf("main/INFO",`Setting user: ${ProfileManager.manager.getData().username}`);
+        KaplayLogger.printf("main/INFO", `Setting user: ${ProfileManager.manager.getData().username}`);
         Registries.unfreeze();
         Registries.init();
         this.soundLoader = new SoundLoader();
@@ -61,7 +63,7 @@ export class Main {
         this.languageLoader.init();
         Constants.language = "zh_cn";
         Constants.languageProvider = Registry.get(Registries.LANGUAGE, Constants.language);
-        KaplayLogger.log("registry",`Number of registration items: ${Registries.getSizes()}`);
+        KaplayLogger.log("registry", `Number of registration items: ${Registries.getSizes()}`);
         window.option = new Option();
         window.profilesUI = new Profiles();
         window.loseLevel = new LoseLevel();
@@ -72,15 +74,17 @@ export class Main {
         window.htmlTool = Constants.HTMLTool;
         Renderer.renderingMain();
     }
+
     getClient() {
         return Main.kaboomInstance;
     }
 }
+
 const PC = {
     global: true,
     canvas: document.querySelector(".h5canvas"),
     font: "UrdType",
-    background: [ 0, 0, 0, ],
+    background: [0, 0, 0,],
     backgroundAudio: true,
     scale: 0.5,
     width: 1280,
@@ -94,7 +98,7 @@ const LAPTOP = {
     global: true,
     canvas: document.querySelector(".h5canvas"),
     font: "UrdType",
-    background: [ 0, 0, 0, ],
+    background: [0, 0, 0,],
     backgroundAudio: true,
     scale: 0.5,
     width: 1280,
@@ -107,10 +111,10 @@ const LAPTOP = {
 export var gameThreadLock = false;
 export var launcher = {};
 try {
-    if(gameThreadLock == false) {
+    if (gameThreadLock == false) {
         gameThreadLock = true;
         let device = detectDevice();
-        if(device == 'Desktop') {
+        if (device == 'Desktop') {
             launcher = PC;
         } else {
             launcher = LAPTOP;
@@ -124,7 +128,7 @@ try {
         const scenes = {
             index: () => {
                 setCursor("auto");
-                if(Scenes.SCENE != null) {
+                if (Scenes.SCENE != null) {
                     Scenes.SCENE().jump();
                     Scenes.SCENE = null;
                 }
@@ -132,14 +136,14 @@ try {
             },
             n_index: () => {
                 setCursor("auto");
-                if(WorldLevel.currentWorldLevel != null) {
+                if (WorldLevel.currentWorldLevel != null) {
                     WorldLevel.currentWorldLevel.jump();
                 }
                 createDebug();
             },
             w_index: () => {
                 setCursor("auto");
-                if(Worlds.currentOpenedWorld != null) {
+                if (Worlds.currentOpenedWorld != null) {
                     Worlds.currentOpenedWorld.jump();
                 }
                 createDebug();
@@ -150,83 +154,84 @@ try {
         }
         Constants.mainClient = new Main();
         Constants.mainClient.start();
-        KaplayLogger.log("main","Game launch completed");
+        KaplayLogger.log("main", "Game launch completed");
     }
 } catch (err) {
-    KaplayLogger.crash("main","The game has crashed.");
-    KaplayLogger.crash("main",err);
+    KaplayLogger.crash("main", "The game has crashed.");
+    KaplayLogger.crash("main", err);
     console.error(err);
     let crasher = new Crasher();
     crasher.create(err);
 }
+
 function createDebug() {
     onMousePress(() => {
-        if(Constants.debugMode) {
+        if (Constants.debugMode) {
             let mousePos_ = mousePos();
             let mouseX = mousePos_.x.toFixed(1);
             let mouseY = mousePos_.y.toFixed(1);
             KaplayLogger.debug(mouseX + " / " + mouseY);
         }
     });
-    onKeyPress("l",() => {
-        if(Constants.debugMode) {
+    onKeyPress("l", () => {
+        if (Constants.debugMode) {
             Worlds.jumpToWorldLevel("level1_1");
         }
     });
-    onKeyPress("a",() => {
-        if(Constants.debugMode) {
-            Registry.get(Registries.PLANT,"dispenser")(null);
+    onKeyPress("a", () => {
+        if (Constants.debugMode) {
+            Registry.get(Registries.PLANT, "dispenser")(null);
         }
     });
-    onKeyPress("s",() => {
-        if(Constants.debugMode) {
-            Registry.get(Registries.PLANT,"silvenser")(null);
+    onKeyPress("s", () => {
+        if (Constants.debugMode) {
+            Registry.get(Registries.PLANT, "silvenser")(null);
         }
     });
-    onKeyPress("d",() => {
-        if(Constants.debugMode) {
+    onKeyPress("d", () => {
+        if (Constants.debugMode) {
             new Sword();
         }
     });
-    onKeyPress("f",() => {
-        if(Constants.debugMode) {
+    onKeyPress("f", () => {
+        if (Constants.debugMode) {
         }
     });
-    onKeyPress("]",() => {
-        if(Constants.debugMode) {
+    onKeyPress("]", () => {
+        if (Constants.debugMode) {
             //Items.spawnItem("dispenser");
             //GargoyleStatue.spawn(4,1);
             //new GemStone(100,100,1).spawn();
             Scenes.jumpTo("music_room");
         }
     });
-    onKeyPress("z",() => {
-        if(Constants.debugMode) {
+    onKeyPress("z", () => {
+        if (Constants.debugMode) {
             let z = Registry.get(Registries.ZOMBIE, "zombie")(1);
         }
     });
-    onKeyPress("x",() => {
-        if(Constants.debugMode) {
+    onKeyPress("x", () => {
+        if (Constants.debugMode) {
             let x = Registry.get(Registries.ZOMBIE, "cap_zombie")(1);
         }
     });
-    onKeyPress("c",() => {
-        if(Constants.debugMode) {
+    onKeyPress("c", () => {
+        if (Constants.debugMode) {
             let c = Registry.get(Registries.ZOMBIE, "iron_helmet_zombie")(1);
         }
     });
-    onKeyPress("v",() => {
-        if(Constants.debugMode) {
+    onKeyPress("v", () => {
+        if (Constants.debugMode) {
             let v = Registry.get(Registries.ZOMBIE, "necromancer")(1);
         }
     });
-    onKeyPress("b",() => {
-        if(Constants.debugMode) {
+    onKeyPress("b", () => {
+        if (Constants.debugMode) {
             let b = Registry.get(Registries.ZOMBIE, "skeleton")(1);
         }
     });
-    onKeyPress("m",() => {
-        if(Constants.debugMode) {
+    onKeyPress("m", () => {
+        if (Constants.debugMode) {
             Worlds.jumpToWorld("world1")
         }
     });
